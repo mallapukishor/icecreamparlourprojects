@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        {% include 'bootstrap.html' %}
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="background-color: lightblue;">
+        <div class="row" style="background-color: lightblue;height:200px;">
+            <h1>
+                <a href="{% url 'menu' %}" class="btn btn-primary">Menu</a>
+            </h1>
+        </div>
+        <center>
+            <h1>Edit Item</h1>
+        </center>
+        <form action="{% url 'update' %}">
+            <table align="center">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="hidden" name="id" value="{{record.id}}"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>:</td>
+                    <td><input type="text" name="name" value="{{record.name}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>Brand</td>
+                    <td>:</td>
+                    <td><input type="text" name="brand" value="{{record.brand}}" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td>:</td>
+                    <td><input type="text" name="price" value="{{record.price}}" class="form-control"></td>
+                </tr>            
+                <tr>
+                    <td colspan="3">
+                        <center>
+                            <button type="submit" class="btn btn-success">Update</button>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="row" style="background-color: lightblue;height:200px;"></div>
+    </div>
+</body>
+</html>

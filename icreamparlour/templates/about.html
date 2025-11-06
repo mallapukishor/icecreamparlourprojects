@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="container" style="background-color: lightblue;">
+        {% include 'navlinks.html' %}
+        {% load static %}
+        <!-- <h1>{{page}}</h1> -->
+         <div class="row" style="height:30px;"></div>
+         <div class="row">
+            <div class="img-thumbnail col-md-6" >
+                <img src="{% static 'images/icream_image.jpg' %}" width="100%">
+            </div>  
+            <div class="caption col-md-6">
+                <p>The Scoops Ice creams was introduced in 1989 by the Haridwar Group as a strategy to introduce quality ice cream exclusively at their group of hotels. The immense popularity the brand earned in the early period of its introduction laid the foundation for what was to be a truly remarkable story of success and sweetness.</p>
+                <p>The Scoops Ice creams was introduced in 1989 by the Haridwar Group as a strategy to introduce quality ice cream exclusively at their group of hotels. The immense popularity the brand earned in the early period of its introduction laid the foundation for what was to be a truly remarkable story of success and sweetness.</p>
+                <p>The Scoops Ice creams was introduced in 1989 by the Haridwar Group as a strategy to introduce quality ice cream exclusively at their group of hotels. The immense popularity the brand earned in the early period of its introduction laid the foundation for what was to be a truly remarkable story of success and sweetness.</p>
+            </div>          
+         </div>
+         <div class="row" style="height:40px;"></div>        
+    </div>
+</body>
+</html>

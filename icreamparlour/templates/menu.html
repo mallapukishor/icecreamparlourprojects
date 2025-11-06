@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <title>{{title}}</title>
+</head>
+<body>
+    <div class="container" style="background-color: lightblue;">
+        <div class="row">
+            {% include 'navlinks.html' %}
+            {% if request.user.is_superuser %}
+                <h1><a href="insert" class="btn btn-primary">Insert Item</a></h1>
+            {% endif %}
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    {% if request.user.is_superuser %}
+                        <th>Action</th>
+                    {% endif %}
+                </tr>
+                {% for record in records %}
+                <tr>
+                    <td>{{record.name}}</td>
+                    <td>{{record.brand}}</td>
+                    <td>{{record.price}}</td>
+                    {% if request.user.is_superuser %}
+                        <td>
+                            <center>
+                                <a href="edit/{{record.id}}" class="btn btn-success">Edit</a> |
+                                <a href="delete/{{record.id}}" class="btn btn-danger">Delete</a>
+                            </center>
+                        </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="row" style="height:40px;"></div>
+    </div>
+</body>
+</html>
